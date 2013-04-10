@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+body{
+	font-size:12px;
+	font-family:微软雅黑;
+    padding-bottom: 40px;
+    padding-top: 60px;
+	
+}   
+
+footer{
+      	text-align: center;
+}
