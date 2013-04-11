@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends Controller
+class CompanyController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -27,11 +27,11 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','create'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','my','view'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -61,16 +61,21 @@ class UserController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new BUser;
+		$model=new BCompany;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
-		if(isset($_POST['BUser']))
+		if(isset($_POST['BCompany']))
 		{
-			$model->attributes=$_POST['BUser'];
+			$model->attributes=$_POST['BCompany'];
+			
+			$model->status=0;//正常状态
+			$model->createDate=getdate();
+			$model->lnkUser="";
+			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->userName));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -88,13 +93,13 @@ class UserController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['BUser']))
+		if(isset($_POST['BCompany']))
 		{
-			$model->attributes=$_POST['BUser'];
+			$model->attributes=$_POST['BCompany'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->userName));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -127,7 +132,7 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('BUser');
+		$dataProvider=new CActiveDataProvider('BCompany');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -138,10 +143,10 @@ class UserController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new BUser('search');
+		$model=new BCompany('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['BUser']))
-			$model->attributes=$_GET['BUser'];
+		if(isset($_GET['BCompany']))
+			$model->attributes=$_GET['BCompany'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -155,7 +160,7 @@ class UserController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=BUser::model()->findByPk($id);
+		$model=BCompany::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -167,17 +172,10 @@ class UserController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='buser-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='bcompany-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-	}
-	
-	public function actionMy(){
-		
-		$this->render('my',array(
-			//'model'=>$model,
-		));
 	}
 }

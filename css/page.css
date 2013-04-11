@@ -11,3 +11,15 @@ body{
 footer{
       	text-align: center;
 }
+
+.form .row label {
+    float: left;
+    width: 80px;
+}
+
+.view{
+	padding:5px;
+	margin:5px;
+	width:30%;
+	border: 1px solid #0088CC;
+}

@@ -9,11 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/page.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	
-   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
-	
+	<?php
+	  $baseUrl = Yii::app()->request->baseUrl; 
+	  $cs = Yii::app()->getClientScript();
+	  Yii::app()->clientScript->registerCoreScript('jquery');
+	?>
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="js/html5.js"></script>
@@ -24,6 +29,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png">
+    
+     <?php
+	  $cs->registerScriptFile($baseUrl.'/bootstrap/js/bootstrap.js');	  
+	?>
 </head>
 <body>
 

@@ -47,6 +47,7 @@ class BCompany extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('title, address, tele, email', 'required'),
 			array('ctype, privilege, status', 'numerical', 'integerOnly'=>true),
 			array('title, address, tele, email', 'length', 'max'=>50),
 			array('province, city', 'length', 'max'=>3),
@@ -77,20 +78,20 @@ class BCompany extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'title' => 'Title',
-			'address' => 'Address',
-			'province' => 'Province',
-			'city' => 'City',
-			'url' => 'Url',
-			'tele' => 'Tele',
+			'id' => '公司ID',
+			'title' => '名字',
+			'address' => '地址',
+			'province' => '省份',
+			'city' => '城市',
+			'url' => '公司网址',
+			'tele' => '电话',
 			'email' => 'Email',
-			'remarks' => 'Remarks',
+			'remarks' => '注释',
 			'ctype' => 'Ctype',
-			'createDate' => 'Create Date',
-			'lnkUser' => 'Lnk User',
-			'privilege' => 'Privilege',
-			'status' => 'Status',
+			'createDate' => '创建时间',
+			'lnkUser' => '创建者',
+			'privilege' => '可见级别',
+			'status' => '状态',
 		);
 	}
 

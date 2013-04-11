@@ -45,6 +45,7 @@ div.form select
 	margin: 0.2em 0 0.5em 0;
 }
 
+/*** sam/20130411
 div.form fieldset
 {
 	border: 1px solid #DDD;
@@ -52,6 +53,7 @@ div.form fieldset
 	margin: 0 0 10px 0;
     -moz-border-radius:7px;
 }
+**/
 
 div.form label
 {
