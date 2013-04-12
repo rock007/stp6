@@ -1,3 +1,17 @@
+<?php 
+  ;
+
+ function navItemSelected($pgname){
+ 	
+  	$pg=Yii::app()->request->url;  
+    
+     if (strpos($pg ,$pgname)!=false){
+     	//echo "active"; Don't echo here
+     	return "active";
+     }
+  }
+
+?>
 
 <?php $this->beginContent('//layouts/main'); ?>
 
@@ -19,15 +33,15 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                  公司库
+                  	公司库
                 </a>
               </div>
               <div id="collapseOne" class="accordion-body in" style="height: auto;">
                 <div class="accordion-inner">
 
             <ul class="nav nav-list">
-              <li class="active"><a href="index.php?r=Company">查询</a></li>
-              <li><a href="index.php?r=Company/create">添加</a></li>
+              <li class="<?php echo navItemSelected('Company/index'); ?>" ><a href="index.php?r=Company/index">查询</a></li>
+              <li class="<?php echo navItemSelected('Company/create'); ?>" ><a href="index.php?r=Company/create">添加</a></li>
               <li><a href="#">分类整理</a></li>
               <li><a href="#">跟踪</a></li>             
             </ul>

@@ -4,12 +4,11 @@ body{
 	font-size:12px;
 	font-family:微软雅黑;
     padding-bottom: 40px;
-    padding-top: 60px;
-	
+    padding-top: 60px;	
 }   
 
 footer{
-      	text-align: center;
+    text-align: center;
 }
 
 .form .row label {
@@ -22,4 +21,14 @@ footer{
 	margin:5px;
 	width:30%;
 	border: 1px solid #0088CC;
+}
+
+.viewModel{ 
+ 	width:100%; 
+    text-align:right;
+}
+
+.form_tag {
+    float:right;
+    font-size:12px;
 }

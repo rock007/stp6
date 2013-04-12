@@ -1,8 +1,8 @@
 <?php
 $this->breadcrumbs=array(
-	'Bcompanies'=>array('index'),
+	'公司'=>array('index'),
 	$model->title=>array('view','id'=>$model->id),
-	'Update',
+	'更新',
 );
 
 $this->menu=array(
@@ -14,7 +14,7 @@ $this->menu=array(
 ?>
 
 <div class="span6">
-<h1>更新公司 <?php echo $model->id; ?></h1>
+<h5>更新公司 <?php echo $model->id; ?></h5>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 

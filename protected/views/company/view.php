@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Bcompanies'=>array('index'),
+	'公司'=>array('index'),
 	$model->title,
 );
 
@@ -13,10 +13,12 @@ $this->menu=array(
 );
 ?>
 <div class="span6">
-<h1>View BCompany #<?php echo $model->id; ?></h1>
+<h5>查看公司 #<?php echo $model->id; ?> | <a href="" >返回</a></h5>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	'htmlOptions'=>array('class'=>'table'),
 	'attributes'=>array(
 		'id',
 		'title',

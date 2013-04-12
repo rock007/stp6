@@ -9,10 +9,8 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
-
 <fieldset>
-<legend>基本信息</legend>
+<legend>基本信息<span class="form_tag"> <a href="">展开</a> </span></legend>
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>50,'maxlength'=>50)); ?>
@@ -45,7 +43,7 @@
 </fieldset>
 
 <fieldset>
-<legend>联系方式</legend>
+<legend>联系方式  <span class="form_tag"> <a href="">展开</a> </span> </legend>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tele'); ?>
@@ -86,10 +84,11 @@
 		<?php echo $form->error($model,'privilege'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div class="row buttons" >
+		<?php echo CHtml::submitButton($model->isNewRecord ? '新建' : '更新',
+			array('class'=>'btn btn-primary')); ?>
 		
-		<?php echo CHtml::button("返回")?>
+		<?php echo CHtml::button("返回",array('class'=>'btn'))?>
 	</div>
 
 <?php $this->endWidget(); ?>

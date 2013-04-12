@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Bcompanies'=>array('index'),
-	'Create',
+	'公司'=>array('index'),
+	'添加',
 );
 
 $this->menu=array(
