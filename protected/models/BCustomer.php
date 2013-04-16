@@ -49,6 +49,7 @@ class BCustomer extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('name, mobile, province, city, lnkUser', 'required'),
 			array('position, sex, lnkCompany, privilege, status', 'numerical', 'integerOnly'=>true),
 			array('name, mobile, tele, qq, lnkUser', 'length', 'max'=>20),
 			array('email', 'length', 'max'=>30),
@@ -79,22 +80,22 @@ class BCustomer extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'position' => 'Position',
-			'sex' => 'Sex',
-			'mobile' => 'Mobile',
-			'tele' => 'Tele',
-			'qq' => 'Qq',
+			'id' => '用户号',
+			'name' => '名字',
+			'position' => '职位',
+			'sex' => '性别',
+			'mobile' => '手机',
+			'tele' => '电话',
+			'qq' => 'QQ',
 			'email' => 'Email',
-			'province' => 'Province',
-			'city' => 'City',
-			'remarks' => 'Remarks',
-			'lnkCompany' => 'Lnk Company',
-			'lnkUser' => 'Lnk User',
-			'privilege' => 'Privilege',
-			'status' => 'Status',
-			'createDate' => 'Create Date',
+			'province' => '省份',
+			'city' => '城市',
+			'remarks' => '备注',
+			'lnkCompany' => '所属公司',
+			'lnkUser' => '创建者',
+			'privilege' => '可见级别',
+			'status' => '状态',
+			'createDate' => '创建日期',
 		);
 	}
 

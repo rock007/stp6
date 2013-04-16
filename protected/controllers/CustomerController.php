@@ -1,6 +1,6 @@
 <?php
 
-class CompanyController extends Controller
+class CustomerController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -15,6 +15,7 @@ class CompanyController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -61,20 +62,14 @@ class CompanyController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new BCompany;
+		$model=new BCustomer;
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
-		if(isset($_POST['BCompany']))
+		if(isset($_POST['BCustomer']))
 		{
-			$model->attributes=$_POST['BCompany'];
-			
-			$model->ctype=1;
-			$model->status=0;//正常状态
-			$model->createDate=date("Y-m-d H:i:s");
-			$model->lnkUser=Yii::app()->user->name;
-			
+			$model->attributes=$_POST['BCustomer'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -94,11 +89,11 @@ class CompanyController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
-		if(isset($_POST['BCompany']))
+		if(isset($_POST['BCustomer']))
 		{
-			$model->attributes=$_POST['BCompany'];
+			$model->attributes=$_POST['BCustomer'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -115,17 +110,11 @@ class CompanyController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+		$this->loadModel($id)->delete();
 
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**
@@ -133,9 +122,8 @@ class CompanyController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('BCompany');
+		$dataProvider=new CActiveDataProvider('BCustomer');
 		$this->render('index',array(
-			'model'=>'0',//显示状态,0:table,1:card
 			'dataProvider'=>$dataProvider,
 		));
 	}
@@ -145,10 +133,10 @@ class CompanyController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new BCompany('search');
+		$model=new BCustomer('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['BCompany']))
-			$model->attributes=$_GET['BCompany'];
+		if(isset($_GET['BCustomer']))
+			$model->attributes=$_GET['BCustomer'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -158,11 +146,13 @@ class CompanyController extends Controller
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer the ID of the model to be loaded
+	 * @param integer $id the ID of the model to be loaded
+	 * @return BCustomer the loaded model
+	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=BCompany::model()->findByPk($id);
+		$model=BCustomer::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -170,11 +160,11 @@ class CompanyController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
+	 * @param BCustomer $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='bcompany-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='bcustomer-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

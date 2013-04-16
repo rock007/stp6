@@ -10,7 +10,7 @@ $this->menu=array(
 );
 ?>
 <div class="span6">
-<h1>添加公司</h1>
+<h4>添加公司</h4>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>

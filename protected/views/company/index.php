@@ -11,22 +11,28 @@ $this->menu=array(
 <div class="span9">
 
 <h5>公司库</h5>
-<div class="viewModel">
-<a href=""><span>列表</span></a>|<a href=""><span>卡片</span></a>
-</div>
+
 
 <form class="form-search">
   <input type="text" class="input-medium " style="width: 300px">
+  <input type="hidden" name="model">
   <button type="submit" class="btn">检索</button>
+  
+  <div class="viewModel">
+	<a href="javascript:mode(0)"><span>列表</span></a>|<a href="javascript:mode(1)"><span>卡片</span></a>
+ </div>
+
 </form>
 
-<!--  
+<?php if($model==1){ ?>
+  
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view2',
-	'template'   => '<table class="table table-bordered">{items}</table>{pager}',
+	'itemView'=>'_view',
+	//'template'   => '<table class="table table-bordered">{items}</table>{pager}',
 )); ?>
--->
+
+<?php }else {?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$dataProvider,
@@ -66,5 +72,6 @@ $this->menu=array(
     ),	
 )); ?>
 
+<?php }?>
 
 </div>

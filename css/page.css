@@ -15,7 +15,9 @@ footer{
     float: left;
     width: 80px;
 }
-
+.items{
+	width:100%;
+}
 .view{
 	padding:5px;
 	margin:5px;
@@ -23,8 +25,8 @@ footer{
 	border: 1px solid #0088CC;
 }
 
-.viewModel{ 
- 	width:100%; 
+.viewModel{  	
+ 	float: right;
     text-align:right;
 }
 

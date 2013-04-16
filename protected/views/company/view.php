@@ -39,6 +39,13 @@ $this->menu=array(
 </div>
 <div class="span3">
 
+
+<fieldset>
+<legend>联系人[<a href="">添加</a>]</legend>
+xx
+
+
+</fieldset>
 </div>
 
 

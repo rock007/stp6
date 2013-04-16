@@ -55,12 +55,11 @@
                   客户资料
                 </a>
               </div>
-              <div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
-                <div class="accordion-inner">
-            
+              <div id="collapseTwo" class="accordion-body collapse" style="height: auto;">
+                <div class="accordion-inner">            
             <ul class="nav nav-list">
-              <li ><a href="#">查询</a></li>
-              <li><a href="#">添加</a></li>
+              <li  class="<?php echo navItemSelected('Customer/index'); ?>" ><a href="index.php?r=Customer/index">查询</a></li>
+              <li  class="<?php echo navItemSelected('Customer/create'); ?>" ><a href="index.php?r=Customer/create">添加</a></li>
               <li><a href="#">分类</a></li>
               <li><a href="#">备注</a></li>             
             </ul>
@@ -74,7 +73,7 @@
                   业务记录
                 </a>
               </div>
-              <div id="collapseThree" class="accordion-body collapse" style="height: 0px;">
+              <div id="collapseThree" class="accordion-body collapse" style="height: auto;">
                 <div class="accordion-inner">		    
 		    <ul class="nav nav-list">
               <li ><a href="#">本周拜访</a></li>

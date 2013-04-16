@@ -614,3 +614,85 @@ Stack trace:
 #29 {main}
 REQUEST_URI=/GitHub/stp6/index.php?r=user/my
 ---
+2013/04/16 13:15:30 [error] [php] Array to string conversion (D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\db\schema\CDbColumnSchema.php:146)
+Stack trace:
+#0 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\db\ar\CActiveRecord.php(795): BCompany->insert()
+#1 E:\GitHub\stp6\protected\controllers\CompanyController.php(77): BCompany->save()
+#2 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanyController->actionCreate()
+#3 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanyController->runAction()
+#5 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanyController->filterAccessControl()
+#8 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(265): CompanyController->runActionWithFilters()
+#11 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): CompanyController->run()
+#12 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 E:\GitHub\stp6\index.php(14): CWebApplication->run()
+REQUEST_URI=/GitHub/stp6/index.php?r=Company/create
+in E:\GitHub\stp6\protected\controllers\CompanyController.php (77)
+in E:\GitHub\stp6\index.php (14)
+2013/04/16 13:15:58 [error] [php] Array to string conversion (D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\db\schema\CDbColumnSchema.php:146)
+Stack trace:
+#0 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\db\ar\CActiveRecord.php(795): BCompany->insert()
+#1 E:\GitHub\stp6\protected\controllers\CompanyController.php(77): BCompany->save()
+#2 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanyController->actionCreate()
+#3 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanyController->runAction()
+#5 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanyController->filterAccessControl()
+#8 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(265): CompanyController->runActionWithFilters()
+#11 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): CompanyController->run()
+#12 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 E:\GitHub\stp6\index.php(14): CWebApplication->run()
+REQUEST_URI=/GitHub/stp6/index.php?r=Company/create
+in E:\GitHub\stp6\protected\controllers\CompanyController.php (77)
+in E:\GitHub\stp6\index.php (14)
+2013/04/16 13:18:32 [error] [php] Array to string conversion (D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\db\schema\CDbColumnSchema.php:146)
+Stack trace:
+#0 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\db\ar\CActiveRecord.php(795): BCompany->insert()
+#1 E:\GitHub\stp6\protected\controllers\CompanyController.php(78): BCompany->save()
+#2 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanyController->actionCreate()
+#3 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanyController->runAction()
+#5 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanyController->filterAccessControl()
+#8 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(265): CompanyController->runActionWithFilters()
+#11 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): CompanyController->run()
+#12 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 E:\GitHub\stp6\index.php(14): CWebApplication->run()
+REQUEST_URI=/GitHub/stp6/index.php?r=Company/create
+in E:\GitHub\stp6\protected\controllers\CompanyController.php (78)
+in E:\GitHub\stp6\index.php (14)
+2013/04/16 14:27:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "add" 动作.' in D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(270): CController->missingAction('add')
+#1 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('add')
+#2 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Customer/add')
+#3 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\GitHub\stp6\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/GitHub/stp6/index.php?r=Customer/add
+HTTP_REFERER=http://localhost/GitHub/stp6/index.php?r=Customer/index
+---
+2013/04/16 14:27:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "add" 动作.' in D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CController.php(270): CController->missingAction('add')
+#1 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('add')
+#2 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Customer/add')
+#3 D:\Program Files\Apache Group\Apache2\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\GitHub\stp6\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/GitHub/stp6/index.php?r=Customer/add
+HTTP_REFERER=http://localhost/GitHub/stp6/index.php?r=Customer/index
+---
